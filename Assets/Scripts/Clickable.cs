@@ -9,6 +9,7 @@ public class Clickable : MonoBehaviour
     [SerializeField] private float _scaleTime = 0.25f;
     [SerializeField] private HitEffect _hitEffectPrefab;
     [SerializeField] private SmallCube _smallCubePrefab;
+    [SerializeField] private GameObject _spawnPoint;
     [SerializeField] private Resources _resources;
 
     private int _coinsPerClick = 1;
@@ -27,7 +28,7 @@ public class Clickable : MonoBehaviour
 
     private void CreateSmallCube()
     {
-        SmallCube newSmallCube = Instantiate(_smallCubePrefab);
+        SmallCube newSmallCube = Instantiate(_smallCubePrefab, _spawnPoint.transform.position, Quaternion.identity);
         newSmallCube.Init(_resources);
         newSmallCube.FlipCube();
     }
