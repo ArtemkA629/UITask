@@ -3,9 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Resources : MonoBehaviour
+public class CoinResources : MonoBehaviour
 {
-
     public int Coins { get; private set; }
     [SerializeField] private UICounter _counter;
 
@@ -17,19 +16,22 @@ public class Resources : MonoBehaviour
         OnChangeCoins?.Invoke(Coins);
     }
 
-    public void CollectCoins(int value, Vector3 worldPosition) {
+    public void CollectCoins(int value, Vector3 worldPosition) 
+    {
         OnCollectCoins.Invoke(worldPosition);
         StartCoroutine(AddCoinsAfterDelay(value, 1f));
     }
 
-    private IEnumerator AddCoinsAfterDelay(int value, float delay) {
+    private IEnumerator AddCoinsAfterDelay(int value, float delay) 
+    {
         yield return new WaitForSeconds(delay);
         Coins += value;
         OnChangeCoins?.Invoke(Coins);
         _counter.Display();
     }
 
-    public bool TryBuy(int price) {
+    public bool TryBuy(int price) 
+    {
         if (Coins >= price)
         {
             Coins -= price;
@@ -41,6 +43,4 @@ public class Resources : MonoBehaviour
             return false;
         }
     }
-
-
 }

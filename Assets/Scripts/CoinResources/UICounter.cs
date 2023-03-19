@@ -10,7 +10,7 @@ public class UICounter : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _text;
     // Время, в течении которого проходит анимация
     [SerializeField] private float _animationTime;
-    [SerializeField] private Resources _resources;
+    [SerializeField] private CoinResources _resources;
 
     public void Display()
     {

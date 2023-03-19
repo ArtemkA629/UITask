@@ -1775,7 +1775,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   _scaleTime: 0.25
   _hitEffectPrefab: {fileID: 4275705116720210886, guid: 5adfaec93265efd4a9a9c356a3a281c4, type: 3}
-  _resources: {fileID: 868916819}
+  _coinResources: {fileID: 868916819}
+  _smallCubeResources: {fileID: 732791038}
 --- !u!1 &517734711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,6 +2416,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732450451}
   m_CullTransparentMesh: 1
+--- !u!1 &732791037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 732791039}
+  - component: {fileID: 732791038}
+  m_Layer: 0
+  m_Name: SmallCubeResources
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &732791038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732791037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1131a438886df954aba0cb9f3d397001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &732791039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732791037}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2264185, y: 0.39990878, z: -0.14261341}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &734101079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2807,7 +2851,7 @@ GameObject:
   - component: {fileID: 868916820}
   - component: {fileID: 868916819}
   m_Layer: 0
-  m_Name: Resources
+  m_Name: CoinResources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3086,7 +3130,7 @@ MonoBehaviour:
   _flyingCoinPrefab: {fileID: 7001224306809811428, guid: 48886f892bd66d94b8d1e2076cbda595, type: 3}
   _parent: {fileID: 1543478989}
   _target: {fileID: 1032016921}
-  _resources: {fileID: 868916819}
+  _coinResources: {fileID: 868916819}
 --- !u!4 &940773958
 Transform:
   m_ObjectHideFlags: 0
@@ -5167,6 +5211,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595950947}
   m_CullTransparentMesh: 1
+--- !u!1 &1619326169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1619326171}
+  - component: {fileID: 1619326170}
+  m_Layer: 0
+  m_Name: SmallCubeCreator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1619326170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619326169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1109c66981d294a836af8a11eb34d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _smallCubePrefab: {fileID: 1483577384826346544, guid: ea399b8613ec76140ae742f539d5041b, type: 3}
+  _smallCubeResources: {fileID: 732791038}
+  _coinResources: {fileID: 868916819}
+--- !u!4 &1619326171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619326169}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2264185, y: 0.39990878, z: -0.14261341}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1656554904
 GameObject:
   m_ObjectHideFlags: 0
