@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class ModelVariants : MonoBehaviour
 {
-
     [SerializeField] private GameObject[] _models;
-    private GameObject _currenSelected;
     [SerializeField] private TMP_Dropdown _dropdown;
+
+    private GameObject _currenSelected;
 
     private void Start()
     {
@@ -25,10 +25,10 @@ public class ModelVariants : MonoBehaviour
         _dropdown.options = _optionDataList;
 
         _dropdown.onValueChanged.AddListener(Select);
-
     }
 
-    public void Select(int index) {
+    public void Select(int index) 
+    {
         _currenSelected.SetActive(false);
         _currenSelected = _models[index];
         _currenSelected.SetActive(true);

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class SmallCube : MonoBehaviour
 {
+    [SerializeField] Resources _resources;
+    [SerializeField] float _forceValue = 3f;
+
     private Rigidbody _rigidBody;
-    [SerializeField]  CoinResources _coinResources;
 
     private void Awake()
     {
@@ -14,21 +16,20 @@ public class SmallCube : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        _coinResources.CollectCoins(1, transform.position);
+        _resources.CollectCoins(1, transform.position);
         Destroy(gameObject);
     }
 
-    public void Init(CoinResources coinResources)
+    public void Init(Resources coinResources)
     {
-        _coinResources = coinResources;
+        _resources = coinResources;
     }
 
     public void FlipCube()
     {
-        System.Random random = new System.Random();
-        float randomX = random.Next(-5, 5);
-        float randomZ = random.Next(-5, 0);
+        float randomX = Random.Range(-1f, 1f);
+        float randomZ = Random.Range(-1f, 1f);
         Vector3 direction = new Vector3(randomX, 5, randomZ);
-        _rigidBody.AddForce(direction);
+        _rigidBody.AddForce(direction * _forceValue, ForceMode.VelocityChange);
     }
 }

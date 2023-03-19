@@ -5,12 +5,11 @@ using UnityEngine;
 
 public class UICounter : MonoBehaviour
 {
-
     [SerializeField] private AnimationCurve _scaleCurve;
     [SerializeField] private TextMeshProUGUI _text;
     // Время, в течении которого проходит анимация
     [SerializeField] private float _animationTime;
-    [SerializeField] private CoinResources _resources;
+    [SerializeField] private Resources _resources;
 
     public void Display()
     {
@@ -28,5 +27,4 @@ public class UICounter : MonoBehaviour
         }
         transform.localScale = Vector3.one;
     }
-
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class HitEffect : MonoBehaviour
 {
-
     [SerializeField] private TextMeshProUGUI _text;
 
     public void Init(int value)
@@ -13,5 +12,4 @@ public class HitEffect : MonoBehaviour
         _text.text = "+" + value.ToString();
         Destroy(gameObject, 2f);
     }
-
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FlyingCoin : MonoBehaviour
 {
-
     [SerializeField] private AnimationCurve _moveCurve;
 
     public void MoveTo(Vector3 targetPosition)
@@ -28,5 +27,4 @@ public class FlyingCoin : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
 }

@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinResources : MonoBehaviour
+public class Resources : MonoBehaviour
 {
-    public int Coins { get; private set; }
     [SerializeField] private UICounter _counter;
 
+    public int Coins { get; private set; }
     public event Action<int> OnChangeCoins;
     public event Action<Vector3> OnCollectCoins;
 
@@ -39,8 +39,6 @@ public class CoinResources : MonoBehaviour
             OnChangeCoins.Invoke(Coins);
             return true;
         }
-        else {
-            return false;
-        }
+        return false;
     }
 }

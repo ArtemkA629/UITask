@@ -7,22 +7,22 @@ public class FlyingCoinCreator : MonoBehaviour
     [SerializeField] private FlyingCoin _flyingCoinPrefab;
     [SerializeField] private Transform _parent;
     [SerializeField] private Transform _target;
-    [SerializeField] private CoinResources _coinResources;
+    [SerializeField] private Resources _resources;
 
     private void OnEnable()
     {
-        _coinResources.OnCollectCoins += CreateFlyingCoin;
+        _resources.OnCollectCoins += CreateFlyingCoin;
     }
 
     private void OnDisable()
     {
-        _coinResources.OnCollectCoins -= CreateFlyingCoin;
+        _resources.OnCollectCoins -= CreateFlyingCoin;
     }
 
-    public void CreateFlyingCoin(Vector3 worldPosition) {
+    public void CreateFlyingCoin(Vector3 worldPosition) 
+    {
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(worldPosition);
         FlyingCoin newFlyingCoin = Instantiate(_flyingCoinPrefab, screenPosition, Quaternion.identity, _parent);
         newFlyingCoin.MoveTo(_target.position);
     }
-
 }

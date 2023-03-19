@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ShopButton : MonoBehaviour
 {
     [SerializeField] private Button _button;
-    [SerializeField] private CoinResources _resources;
+    [SerializeField] private Resources _resources;
     [SerializeField] private int _price;
     [SerializeField] private Clickable _ñlickable;
 
@@ -18,10 +18,10 @@ public class ShopButton : MonoBehaviour
         _button.interactable = coins >= _price;
     }
 
-    public void Buy() {
-        if (_resources.TryBuy(_price)) {
+    public void Buy() 
+    {
+        if (_resources.TryBuy(_price))
             _ñlickable.AddCoinsPerClick(1);
-        }
     }
 
     private void OnEnable()
@@ -33,5 +33,4 @@ public class ShopButton : MonoBehaviour
     {
         _resources.OnChangeCoins -= UpdateButtonState;
     }
-
 }

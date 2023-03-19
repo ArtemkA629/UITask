@@ -5,23 +5,13 @@ using UnityEngine.UIElements;
 
 public class Clickable : MonoBehaviour
 {
-
     [SerializeField] private AnimationCurve _scaleCurve;
     [SerializeField] private float _scaleTime = 0.25f;
     [SerializeField] private HitEffect _hitEffectPrefab;
-    [SerializeField] private CoinResources _coinResources;
-    [SerializeField] private SmallCubeResources _smallCubeResources;
+    [SerializeField] private SmallCube _smallCubePrefab;
+    [SerializeField] private Resources _resources;
 
     private int _coinsPerClick = 1;
-
-    // Метод вызывается из Interaction при клике на объект
-    public void Hit()
-    {
-        HitEffect hitEffect = Instantiate(_hitEffectPrefab, transform.position, Quaternion.identity);
-        hitEffect.Init(_coinsPerClick);
-        _smallCubeResources.DropBoxes();
-        StartCoroutine(HitAnimation());
-    }
 
     // Анимация колебания куба
     private IEnumerator HitAnimation()
@@ -33,6 +23,22 @@ public class Clickable : MonoBehaviour
             yield return null;
         }
         transform.localScale = Vector3.one;
+    }
+
+    private void CreateSmallCube()
+    {
+        SmallCube newSmallCube = Instantiate(_smallCubePrefab);
+        newSmallCube.Init(_resources);
+        newSmallCube.FlipCube();
+    }
+
+    // Метод вызывается из Interaction при клике на объект
+    public void Hit()
+    {
+        HitEffect hitEffect = Instantiate(_hitEffectPrefab, transform.position, Quaternion.identity);
+        hitEffect.Init(_coinsPerClick);
+        CreateSmallCube();
+        StartCoroutine(HitAnimation());
     }
 
     // Этот метод увеличивает количество монет, получаемой при клике
